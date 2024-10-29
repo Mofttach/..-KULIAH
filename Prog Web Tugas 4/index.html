@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Lamaran Kerja</title>
+</head>
+<body>
+    <h1>Formulir Aplikasi Pekerjaan</h1>
+    <form action="/apply" method="POST">
+        <!-- Nama Lengkap -->
+        <label for="nama">Nama Lengkap:</label>
+        <input type="text" id="nama" name="nama" required pattern="[A-Za-z\s]+" title="Hanya huruf dan spasi yang diperbolehkan">
+        <br><br>
+
+        <!-- Email -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+
+        <!-- Telepon -->
+        <label for="telepon">Nomor Telepon:</label>
+        <input type="tel" id="telepon" name="telepon" required pattern="\d{10,15}" title="Masukkan nomor telepon yang valid (10-15 digit)">
+        <br><br>
+
+        <!-- Jenis Kelamin -->
+        <label>Jenis Kelamin:</label><br>
+        <input type="radio" id="laki-laki" name="jenis_kelamin" value="Laki-laki" required>
+        <label for="laki-laki">Laki-laki</label>
+        <input type="radio" id="perempuan" name="jenis_kelamin" value="Perempuan" required>
+        <label for="perempuan">Perempuan</label>
+        <br><br>x`
+
+        <!-- Posisi yang Dilamar -->
+        <label for="posisi">Posisi yang Dilamar:</label>
+        <select id="posisi" name="posisi" required>
+            <option value="">Pilih Posisi</option>
+            <option value="developer">Software Developer</option>
+            <option value="designer">UI/UX Designer</option>
+            <option value="manager">Project Manager</option>
+        </select>
+        <br><br>
+
+        <!-- Keahlian -->
+        <label>Keahlian:</label><br>
+        <input type="checkbox" id="programming" name="keahlian" value="Programming">
+        <label for="programming">Programming</label>
+        <input type="checkbox" id="design" name="keahlian" value="Design">
+        <label for="design">Design</label>
+        <input type="checkbox" id="management" name="keahlian" value="Management">
+        <label for="management">Management</label>
+        <br><br>
+
+        <!-- Pengalaman Kerja -->
+        <label for="pengalaman">Pengalaman Kerja (tahun):</label>
+        <input type="number" id="pengalaman" name="pengalaman" required min="0" max="40" title="Masukkan jumlah tahun pengalaman kerja yang valid">
+        <br><br>
+
+        <!-- CV Upload -->
+        <label for="cv">Unggah CV:</label>
+        <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
+        <br><br>
+
+        <!-- Motivasi -->
+        <label for="motivasi">Mengapa Anda Ingin Bergabung dengan Kami?</label><br>
+        <textarea id="motivasi" name="motivasi" rows="4" cols="50" required minlength="20" maxlength="500" placeholder="Tuliskan motivasi Anda..."></textarea>
+        <br><br>
+
+        <!-- Submit Button -->
+        <button type="submit">Kirim Aplikasi</button>
+    </form>
+</body>
+</html>

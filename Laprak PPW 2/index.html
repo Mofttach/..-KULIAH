@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Lanjutan - Elemen Semantik</title>
+    <!-- <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --background-color: #ecf0f1;
+            --text-color: #34495e;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+        }
+        
+        header, nav, main, footer {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            background-color: var(--secondary-color);
+        }
+        
+        nav ul li {
+            margin: 0 10px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+        }
+        
+        main {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+        }
+        
+        article, aside, section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        figure {
+            margin: 0;
+            text-align: center;
+        }
+        
+        figure img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        
+        figcaption {
+            margin-top: 10px;
+            font-style: italic;
+            color: var(--secondary-color);
+        }
+        
+        aside {
+            background-color: #f9f9f9;
+        }
+        
+        form {
+            display: grid;
+            gap: 10px;
+        }
+        
+        input, textarea, button {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: #2980b9;
+        }
+        
+        footer {
+            text-align: center;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            main {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style> -->
+</head>
+<body>
+    <header>
+        <h1>Selamat Datang di Web HTML5 Semantik</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Tentang</a></li>
+            <li><a href="#">Kontak</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div>
+            <section>
+                <article>
+                    <h2>Artikel Pertama</h2>
+                    <p>Ini adalah contoh elemen <code>&lt;article&gt;</code> di HTML5.</p>
+                    <figure>
+                        <img src="https://picsum.photos/300" alt="Gambar ilustrasi artikel pertama">
+                        <figcaption>Gambar 1: Ilustrasi untuk artikel pertama</figcaption>
+                    </figure>
+                </article>
+
+                <article>
+                    <h2>Artikel Kedua</h2>
+                    <p>Elemen semantik membantu struktur halaman web lebih jelas.</p>
+                    <figure>
+                        <img src="https://picsum.photos/300" alt="Gambar ilustrasi artikel kedua">
+                        <figcaption>Gambar 2: Ilustrasi untuk artikel kedua</figcaption>
+                    </figure>
+                </article>
+            </section>
+
+            <section>
+                <form action="#" method="POST" aria-labelledby="form-heading" novalidate>
+                    <h2 id="form-heading">Formulir Kontak</h2>
+            
+                    <!-- Nama: harus terdiri dari huruf dan spasi, dengan minimal 3 karakter -->
+                    <label for="name">Nama:</label>
+                    <input type="text" id="name" name="name" placeholder="Masukkan nama Anda" 
+                        pattern="[A-Za-z\s]{3,}" 
+                        title="Nama harus terdiri dari minimal 3 karakter huruf" 
+                        required aria-required="true">
+            
+                    <!-- Email: validasi dengan format email -->
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Masukkan email Anda" 
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
+                        title="Masukkan email yang valid (misal: email@example.com)" 
+                        required aria-required="true">
+            
+                    <!-- Pesan: minimal 10 karakter -->
+                    <label for="message">Pesan:</label> 
+                    <textarea id="message" name="message" placeholder="Tulis pesan Anda" 
+                        minlength="10" 
+                        title="Pesan harus memiliki minimal 10 karakter" 
+                        required aria-required="true"></textarea>
+            
+                    <!-- Tombol Kirim dengan label aksesibilitas -->
+                    <button type="submit" aria-label="Kirim Formulir">Kirim</button>
+                </form>
+            </section>
+            
+        </div>
+
+        <aside>
+            <h3>Informasi Terkait</h3>
+            <ul>
+                <li>Panduan HTML5 Semantik</li>
+                <li>Manfaat Penggunaan Elemen Semantik</li>
+                <li>Contoh Implementasi pada Situs Web</li>
+            </ul>
+        </aside>
+
+    </main>
+    <footer>
+        <p>&copy; 2024 Praktikum Web</p>
+    </footer>
+</body>
+</html>
